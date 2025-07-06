@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>管理层团队</title>
+  <style>
+    /* 全局样式重置 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* 顶部导航栏样式 */
+    .top-nav {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 0;
+    }
+
+    .top-nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .top-nav-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .top-nav-left img {
+      height: 20px;
+      margin-right: 10px;
+    }
+
+    .top-nav-left a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 15px;
+    }
+
+    .top-nav-right a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* 主导航栏样式 */
+    .main-nav {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .main-nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .main-nav-inner ul {
+      list-style: none;
+      display: flex;
+    }
+
+    .main-nav-inner ul li {
+      position: relative;
+    }
+
+    .main-nav-inner ul li a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+    }
+
+    .main-nav-inner ul li:hover .submenu {
+      display: block;
+    }
+
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #444;
+      min-width: 150px;
+    }
+
+    .submenu li {
+      display: block;
+    }
+
+    .submenu li a {
+      padding: 8px 15px;
+    }
+
+    /* banner 区域样式 */
+    .banner {
+      position: relative;
+      text-align: center;
+      color: #fff;
+    }
+
+    .banner img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .banner h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 28px;
+    }
+
+    /* 团队成员列表样式 */
+    .team-section {
+      max-width: 1200px;
+      margin: 30px auto;
+      text-align: center; /* 新增：使团队成员标题居中 */
+    }
+
+    .team-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* 新增：成员卡片居中排列 */
+    }
+
+    .team-item {
+      width: 150px;
+      text-align: center;
+      margin: 0 15px 20px; /* 调整边距，使布局更整齐 */
+    }
+
+    .team-item img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .team-item p {
+      margin: 5px 0;
+    }
+
+    /* 新增：团队介绍内容居中样式 */
+    .team-intro {
+      max-width: 800px;
+      margin: 30px auto;
+      text-align: center;
+    }
+
+    .team-slogan {
+      font-size: 1.5rem;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+
+    .team-desc {
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* 团队规则居中样式 */
+    .team-rules {
+      max-width: 800px;
+      margin: 40px auto;
+    }
+
+    .team-rules h3 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .rules-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .col-md-6 {
+      flex: 0 0 48%;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .col-md-6 {
+        flex: 0 0 100%;
+      }
+    }
+
+    .rules-list {
+      padding-left: 20px;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 20px 0;
+      background-color: #f5f5f5;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 顶部导航 -->
+  <div class="top-nav">
+    <div class="top-nav-inner">
+      <div class="top-nav-left">
+        <img src="logo.png" alt="团队logo"> <!-- 小米图标等，替换为实际地址 -->
+        <a href="#">盟合同志</a>
+      </div>
+      <div class="top-nav-right">
+        <a href="#">简</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 主导航 -->
+  <nav class="main-nav">
+    <div class="main-nav-inner">
+      <ul>
+        <li><a href="#">团队概览</a></li>
+        <li>
+          <a href="#">团队信息</a>
+          <ul class="submenu">
+            <li><a href="#">子菜单1</a></li>
+            <li><a href="#">子菜单2</a></li>
+          </ul>
+        </li>
+        <li><a href="#">招新概览</a></li>
+        <li><a href="#">联系我们</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- banner 区域 -->
+  <div class="banner">
+    <img src="bgimg.png" alt="banner背景图"> <!-- banner 背景图，替换为实际地址 -->
+    <h1>我们的团队</h1>
+  </div>
+
+  <div class="team-section">
+    <div class="team-list">
+      <div class="team-item">
+        <img src="3.png" alt="陈锐"> <!-- 成员头像，替换为实际地址 -->
+        <p>陈锐</p>
+        <span>队长</span>
+      </div>
+      <div class="team-item">
+        <img src="2.png" alt="冷宇航">
+        <p>冷宇航</p>
+        <span>成员</span>
+      </div>
+      <div class="team-item">
+        <img src="1.png" alt="王艾东">
+        <p>王艾东</p>
+        <span>成员</span>
+      </div>
+      <div class="team-item">
+        <img src="4.png" alt="王子涵">
+        <p>王子涵</p>
+        <span>成员</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 团队介绍内容（居中显示） -->
+  <div class="team-intro">
+    <h2>盟和同志团队</h2>
+    <p class="team-slogan"><strong>志在同频，盟定山河！携手并进，誓破万壑！</strong></p>
+    <p class="team-desc">志合同盟是一支专注于创新项目的精英团队，以共同的愿景和高效的协作模式推动项目落地，致力于突破挑战、创造价值。</p>
+  </div>
+
+  <!-- 团队规则（居中显示） -->
+  <div class="team-rules">
+    <h3 class="text-center idm-mb-4">团队管理规则及约定</h3>
+    <div class="rules-container">
+      <div class="col-md-6">
+        <ul class="rules-list">
+          <li>
+            <h4><strong>1. 目标一致</strong></h4>
+            <p>所有成员必须认同团队愿景，并为之努力。定期回顾目标达成情况，调整策略以确保方向正确。</p>
+          </li>
+          <li>
+            <h4><strong>2. 沟通机制</strong></h4>
+            <p>每周例会：固定时间进行进度汇报与问题讨论。<br>即时沟通：使用Slack或微信工作群保持日常联系。<br>透明化：所有重要决策和信息共享，避免信息孤岛。</p>
+          </li>
+          <li>
+            <h4><strong>3. 责任分工</strong></h4>
+            <p>明确每位成员的角色与职责。<br>项目任务分配公平合理，定期轮换以提升综合能力。</p>
+          </li>
+          <li>
+            <h4><strong>4. 学习与成长</strong></h4>
+            <p>每月至少一次技术分享会，促进知识交流。<br>鼓励参加外部培训、会议或在线课程，提升个人技能。</p>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <ul class="rules-list">
+          <li>
+            <h4><strong>5. 反馈与改进</strong></h4>
+            <p>实施"360度反馈"机制，定期收集成员意见。<br>对于表现突出者给予认可与奖励，对问题及时纠正。</p>
+          </li>
+          <li>
+            <h4><strong>6. 行为准则</strong></h4>
+            <p>尊重他人观点，倡导开放包容的团队文化。<br>杜绝任何形式的歧视、骚扰或不当言论。</p>
+          </li>
+          <li>
+            <h4><strong>7. 退出机制</strong></h4>
+            <p>成员如因个人原因需退出，应提前两周通知团队。<br>离开前完成交接工作，确保不影响整体进度。</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="row">
+      <div class="expanded copyright">
+        <div class="small-12 medium-12 columns">
+          <ul class="menu text-center">
+            <li class="menu-text text-copyright">
+              <div>©<script>document.write((new Date()).getFullYear());</script> 盟合同志团队，保留所有权利</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
